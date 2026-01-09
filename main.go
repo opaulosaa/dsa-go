@@ -36,8 +36,8 @@ type Node struct {
 	next *Node  //ponteiro do tipo Node para o proximo item da lista
 }
 
-func (n *Node) printList() {
-	current := n
+func (ll *LinkedList) printList() {
+	current := ll.Head
 	for current != nil {
 		fmt.Print(current.data, " --> ")
 		current = current.next
@@ -45,9 +45,9 @@ func (n *Node) printList() {
 	fmt.Print("null")
 }
 
-func (n *Node) findLenght() (count int) {
+func (ll *LinkedList) findLenght() (count int) {
 	//count := 0 não precisa dessa linha se ja estiver no escopo da função
-	current := n
+	current := ll.Head
 	for current != nil {
 		count++
 		current = current.next
